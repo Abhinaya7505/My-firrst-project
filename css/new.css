@@ -1,0 +1,548 @@
+/* ============================================
+   ShoppingMart - Modern Clean CSS
+   ============================================ */
+
+/* CSS Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ============================================
+   Main Container
+   ============================================ */
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+.navbar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navbar a,
+.dropdown .dropbtn {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px 24px;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.navbar a:active,
+.dropdown:active .dropbtn {
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-content a {
+  float: none;
+  color: #333;
+  padding: 14px 20px;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  padding-left: 26px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ============================================
+   Main Content Area
+   ============================================ */
+.main {
+  background-color: #f8f9fa;
+  min-height: 600px;
+  padding: 30px;
+}
+
+.myRow {
+  width: 100%;
+}
+
+.myRow h2 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #667eea;
+  display: inline-block;
+}
+
+/* Product name inside cards */
+.product-card h2 {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  padding: 12px 15px 8px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================
+   Product Cards (Dynamic Content Styling)
+   ============================================ */
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 280px;
+  vertical-align: top;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-card:hover img {
+  transform: none;
+}
+
+.product-info {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-price {
+  font-size: 20px;
+  color: #667eea;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.add-to-cart-btn i {
+  font-size: 16px;
+}
+
+/* ============================================
+   Shopping Cart (flexOutput)
+   ============================================ */
+#flexOutput {
+  padding: 0;
+}
+
+#flexContainer {
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 0;
+  z-index: 999;
+}
+
+#flexContainer h2 {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px 12px 0 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#flexContainer div {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  border-radius: 0;
+  padding: 15px 20px;
+  margin: 0;
+  color: #ffffff;
+}
+
+#flexContainer div:first-of-type {
+  border-radius: 0 0 12px 12px;
+}
+
+#flexContainer button {
+  background: #ffffff;
+  color: #e74c3c;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  float: right;
+  margin: auto 5px auto auto;
+}
+
+#flexContainer button:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+#flexContainer #buttons {
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* ============================================
+   Bill/Checkout Section (finalBill)
+   ============================================ */
+#finalBill {
+  width: 550px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: none;
+  background: #ffffff;
+}
+
+#finalBill h2 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 20px;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#finalBill #billTable {
+  background: #ffffff;
+  padding: 20px;
+  margin: 0;
+  border-radius: 0;
+}
+
+#billTable table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+#billTable th {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#billTable td {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  text-align: center;
+}
+
+#billTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+#finalBill #buttons2 {
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#buttons2 #backToCart,
+#buttons2 #pay {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#buttons2 #backToCart {
+  background: #e0e0e0;
+  color: #333;
+}
+
+#buttons2 #backToCart:hover {
+  background: #d0d0d0;
+}
+
+#buttons2 #pay {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+#buttons2 #pay:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* ============================================
+   Bank Info Section
+   ============================================ */
+#finalBill #bankInfo {
+  height: auto;
+  overflow-x: visible;
+  display: none;
+  padding: 30px;
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+#bankInfo img {
+  width: 40px;
+  margin: 0 auto 0 15px;
+  display: inline-block;
+}
+
+#bankInfo input[type="text"],
+#bankInfo input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+#bankInfo input[type="text"]:focus,
+#bankInfo input[type="password"]:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #container {
+    border-radius: 12px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar a,
+  .dropdown .dropbtn,
+  .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: relative;
+    width: 100%;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  #flexContainer {
+    width: 100%;
+    right: 0;
+    left: 0;
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+
+  #finalBill {
+    width: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}

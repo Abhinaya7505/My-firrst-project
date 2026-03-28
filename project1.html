@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> ShoppingMart </title>
+<link rel="stylesheet" href="css/new.css">
+<link rel="stylesheet" href="css/new2.css">
+<link rel="stylesheet" href="css/new3.css">
+<link rel="stylesheet" href="css/new4.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<!-- Font Awesome for dropdown icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body onload="showProducts(1); renderCart();">
+<div id="container">
+  <header>
+      <h1 style="text-align: center;">WELCOME TO MY PAGE!!!</h1>
+  </header>
+  <div class="navbar">
+    <a href="#" onclick="showProducts(1); return false;">Appliances</a>
+    <div class="dropdown">
+      <button class="dropbtn">Clothes <i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <a href="#" onclick="showProducts(2); return false;">Women's wear</a>
+        <a href="#" onclick="showProducts(3); return false;">Men's wear</a>
+      </div>
+    </div>
+    <a href="#" onclick="showProducts(4); return false;">Snacks</a>
+    <a href="#" onclick="showProducts(5); return false;">Books</a>
+  </div>
+  <div class="main">
+    <div class="myRow"></div>
+  </div>
+</div>
+<!-- Shopping Cart Container -->
+<div id="flexOutput"></div>
+<!-- Bill/Checkout Container -->
+<div id="finalBill"></div>
+<!-- jQuery (required for bankinfo.js slideDown) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="js/new.js"></script>
+<script src="js/new2.js"></script>
+<script src="js/new3.js"></script>
+<script src="js/new4.js"></script>
+<script src="js/new5.js"></script>
+<script src="js/removal.js"></script>
+<script src="js/clearCart.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/bankinfo.js"></script>
+<script src="js/success.js"></script>
+</body>
+</html>
